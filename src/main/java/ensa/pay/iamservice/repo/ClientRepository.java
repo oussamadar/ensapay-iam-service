@@ -4,4 +4,10 @@ import ensa.pay.iamservice.entities.Client;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface ClientRepository extends MongoRepository<Client,Long> {
+    public Client getClientByIdPayment(String idPayment);
+    public Client getClientByPhoneNumber(String phoneNumber);
+    public Client getClientByFixeNumber(String fixeNumber);
+
+
+
 }

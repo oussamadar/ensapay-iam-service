@@ -13,7 +13,13 @@ import java.util.List;
 @Document(collection = "clients")
 public class Client {
     @Id
-    private Long idPayment;
+    private Long id;
+    //to get bills of internet-electricityBill-waterBill...
+    private String idPayment;
+    //to get bills of fixe phone
+    private String fixeNumber;
+    //to get bills of phone
+    private String phoneNumber;
     private String firstName;
     private String lastName;
     private List<Bill> bills;
