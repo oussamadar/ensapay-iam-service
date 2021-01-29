@@ -19,25 +19,8 @@ public class ClientController {
     @Autowired
     ClientSerivce clientSerivce;
 
-    @GetMapping("internet/facture/{idPayment}")
-    public Client billOfInternet(@PathVariable String idPayment) throws NotFoundException {
-        return clientSerivce.getClientByIdPayment(idPayment);
+    @GetMapping("payment/{genericId}/{codeCreance}")
+    public  Client getClientWithBills(@PathVariable String genericId ,@PathVariable String codeCreance ) throws NotFoundException {
+        return clientSerivce.getClientwithIdpaymentAndCodeCreance(genericId,codeCreance);
     }
-
-    @GetMapping("/fixe/facture/{fixeNumber}")
-    public Client billOfFixe(@PathVariable String fixeNumber) throws NotFoundException {
-        return clientSerivce.getClientByFixeNumber(fixeNumber);
-    }
-
-    @GetMapping("/phone/facture/{phoneNumber}")
-    public Client billOfPhone(@PathVariable String phoneNumber) throws NotFoundException {
-        return clientSerivce.getClientByPhoneNumber(phoneNumber);
-    }
-
-    @GetMapping("all")
-    public List<Client> getClients () {
-        return clientSerivce.getAllClient();
-    }
-
-
 }

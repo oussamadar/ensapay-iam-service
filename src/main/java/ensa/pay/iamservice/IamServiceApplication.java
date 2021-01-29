@@ -29,7 +29,7 @@ public class IamServiceApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         Bill internetBill1=new Bill(1526543L, 250.0,new Date(),null,false,"iam1001");
-        Bill internetBill2=new Bill(1526543L, 429.0,new Date(),null,false,"iam1001");
+        Bill internetBill2=new Bill(1526543L, 429.0,new Date(),null,true,"iam1001");
 
         Bill phoneBill1=new Bill(1526543L, 250.0,new Date(),null,false,"iam1002");
         Bill phoneBill2=new Bill(1526543L, 429.0,new Date(),null,false,"iam1002");

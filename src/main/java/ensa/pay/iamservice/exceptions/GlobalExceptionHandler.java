@@ -19,11 +19,11 @@ public class GlobalExceptionHandler {
 
     }
 
-    //Global Exception handler
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleNotFoundException(Exception e , WebRequest request){
-        ErrorDetails errorDetails = new ErrorDetails(new Date(),e.getMessage(),request.getDescription(false));
-        return new ResponseEntity(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
-
-    }
+//    //Global Exception handler
+//    @ExceptionHandler(Exception.class)
+//    public ResponseEntity<?> handleNotFoundException(Exception e , WebRequest request){
+//        ErrorDetails errorDetails = new ErrorDetails(new Date(),e.getMessage(),request.getDescription(false));
+//        return new ResponseEntity(errorDetails,HttpStatus.INTERNAL_SERVER_ERROR);
+//
+//    }
 }
