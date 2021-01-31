@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("iam/gitform")
+@RequestMapping("iam/form")
 public class FormController {
 
     @Autowired
