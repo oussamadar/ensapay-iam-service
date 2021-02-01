@@ -26,4 +26,8 @@ public class BillController {
     public Bill updateBatchedBill(@PathVariable Long id) throws NotFoundException {
         return billService.updateIsbatched(id);
     }
+    @GetMapping("/pay/{id}")
+    public Bill payBill(@PathVariable Long id) throws NotFoundException {
+        return billService.payBill(id);
+    }
 }
