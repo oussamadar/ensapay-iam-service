@@ -23,4 +23,5 @@ public class ClientController {
     public  Client getClientWithBills(@PathVariable String genericId ,@PathVariable String codeCreance ) throws NotFoundException {
         return clientSerivce.getClientwithIdpaymentAndCodeCreance(genericId,codeCreance);
     }
+
 }
