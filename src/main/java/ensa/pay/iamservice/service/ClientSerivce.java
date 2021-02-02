@@ -50,7 +50,7 @@ public class ClientSerivce {
     }
 
 
-    //gereinc methode to deal with cmi request
+    //generinc methode to deal with cmi request
     public Client getClientwithIdpaymentAndCodeCreance(String genericId,String codeCreance) throws NotFoundException {
 
         switch (codeCreance){
@@ -73,7 +73,7 @@ public class ClientSerivce {
     //function for get not payed bills
     Client getClientByNotPayed(Client client){
 
-        System.out.println(client);
+
         List<Bill> bills = client.getBills();
 
         for(int i = 0;i<bills.size();i++){
@@ -81,8 +81,9 @@ public class ClientSerivce {
                 bills.remove(i);
             }
         }
+        client.setBills(bills);
 
-        System.out.println(client);
+
 
 
         return client;
