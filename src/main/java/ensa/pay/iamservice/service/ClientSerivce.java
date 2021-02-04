@@ -7,6 +7,7 @@ import ensa.pay.iamservice.repo.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class ClientSerivce {
@@ -34,7 +35,7 @@ public class ClientSerivce {
             throw  new NotFoundException("404","ce numero d'abonnement de telephone n'existe pas");
         }
         System.out.println();
-        return getClientByNotPayed(client);
+        return (client);
     }
 
     //client with bills of fixe subscription
@@ -43,7 +44,7 @@ public class ClientSerivce {
         if (client==null){
             throw  new NotFoundException("404","ce numero d'abonnement de fixe n'existe pas");
         }
-        return getClientByNotPayed(client);
+        return (client);
     }
     public List<Client> getAllClient(){
         return clientRepository.findAll();
@@ -75,17 +76,15 @@ public class ClientSerivce {
 
 
         List<Bill> bills = client.getBills();
-
-        for(int i = 0;i<bills.size();i++){
-            if(bills.get(i).isPayed()){
-                bills.remove(i);
+        List<Bill> notPayedList= new ArrayList<>(
+        );
+        //System.out.println(bills.size());
+        for (Bill b:bills ){
+            if(!b.isPayed()){
+                notPayedList.add(b);
             }
         }
-        client.setBills(bills);
-
-
-
-
+        client.setBills(notPayedList);
         return client;
     }
 }

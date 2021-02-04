@@ -28,14 +28,14 @@ public class IamServiceApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Bill internetBill1=new Bill(1526541L, 250.0,new Date(),null,false,false,"iam1001");
-        Bill internetBill2=new Bill(1526543L, 429.0,new Date(),null,false,false,"iam1001");
+        Bill internetBill1=new Bill(1526541L, 250.0,new Date(),null,true,false,"iam1001");
+        Bill internetBill2=new Bill(1526542L, 429.0,new Date(),null,true,false,"iam1001");
 
-        Bill phoneBill1=new Bill(1526542L, 250.0,new Date(),null,false,false,"iam1002");
+        Bill phoneBill1=new Bill(1526543L, 250.0,new Date(),null,false,false,"iam1002");
         Bill phoneBill2=new Bill(1526544L, 429.0,new Date(),null,false,false,"iam1002");
 
-        Bill fixeBill1=new Bill(1526546L, 250.0,new Date(),null,false,false,"iam1003");
-        Bill fixeBill2=new Bill(1526545L, 429.0,new Date(),null,false,false,"iam1003");
+        Bill fixeBill1=new Bill(1526545L, 250.0,new Date(),null,false,false,"iam1003");
+        Bill fixeBill2=new Bill(1526546L, 429.0,new Date(),null,false,false,"iam1003");
 
         Stream.of(internetBill1,internetBill2,phoneBill1,phoneBill2,fixeBill1,fixeBill2).forEach(
                 c->{
